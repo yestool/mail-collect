@@ -1,0 +1,19 @@
+{
+  "name": "mail-collect",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "initSqlLocal": "npx wrangler d1 execute mail_collect_db --local --file=./schema.sql",
+    "initSql": "npx wrangler d1 execute mail_collect_db  --file=./schema.sql"
+  },
+  "dependencies": {
+    "hono": "^3.12.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "@types/node": "^20.10.2",
+    "typescript": "^5.0.4",
+    "wrangler": "^3.22.5"
+  }
+}
